@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "640788022391",
+    "firebase_url": "https://nuxt-admin-tokyo.firebaseio.com",
+    "project_id": "nuxt-admin-tokyo",
+    "storage_bucket": "nuxt-admin-tokyo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640788022391:android:7c764b61bcf8a80e033272",
+        "android_client_info": {
+          "package_name": "com.example.aviation_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640788022391-8u6uouh8ms50n3t0t6gj6rn6otkdt9me.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4-SqhqZceynJGq_0twgXs1mJpLtdtbO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640788022391-8u6uouh8ms50n3t0t6gj6rn6otkdt9me.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "640788022391-d5g8q1ddol3ke11fqrdn5ve0bh1na69h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.authWeb"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640788022391:android:b91db4bed59ebddc033272",
+        "android_client_info": {
+          "package_name": "com.example.mileage_run"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640788022391-8u6uouh8ms50n3t0t6gj6rn6otkdt9me.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4-SqhqZceynJGq_0twgXs1mJpLtdtbO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640788022391-8u6uouh8ms50n3t0t6gj6rn6otkdt9me.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "640788022391-d5g8q1ddol3ke11fqrdn5ve0bh1na69h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.authWeb"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640788022391:android:a61dbedf905b3b37033272",
+        "android_client_info": {
+          "package_name": "com.nekohack.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640788022391-8u6uouh8ms50n3t0t6gj6rn6otkdt9me.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4-SqhqZceynJGq_0twgXs1mJpLtdtbO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640788022391-8u6uouh8ms50n3t0t6gj6rn6otkdt9me.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "640788022391-d5g8q1ddol3ke11fqrdn5ve0bh1na69h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.authWeb"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
