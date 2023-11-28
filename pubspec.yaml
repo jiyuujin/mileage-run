@@ -11,7 +11,7 @@ environment:
 dependencies:
   base_widgets:
     git:
-      url: git@github.com:nekohack/base-widgets.git
+      url: https://github.com/nekohack/base-widgets.git
       ref: ver.2023.1.1
   cupertino_icons: ^1.0.2
   firebase_core: ^2.23.0
