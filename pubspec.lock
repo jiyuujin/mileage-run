@@ -46,8 +46,8 @@ packages:
     description:
       path: "."
       ref: "ver.2023.1.1"
-      resolved-ref: c9b78cc566cf78883d796c8b7c561523ce66d220
-      url: "git@github.com:nekohack/base-widgets.git"
+      resolved-ref: "9a2b8d6ca6e52537d212e3fca0d64de8e308f42c"
+      url: "https://github.com/nekohack/base-widgets.git"
     source: git
     version: "1.0.0+1"
   boolean_selector:
