@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:mileage_run/auth/signin_google.dart';
 import 'package:mileage_run/constants.dart';
@@ -12,7 +13,9 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   initializeDateFormatting('ja_JP');
-  runApp(const MyApp());
+  runApp(const ProviderScope(
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

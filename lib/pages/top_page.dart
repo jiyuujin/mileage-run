@@ -1,8 +1,8 @@
 import 'package:base_widgets/components/bottom_navigation_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:mileage_run/constants.dart';
-import 'package:mileage_run/pages/favorite_page.dart';
 import 'package:mileage_run/pages/flight_page.dart';
+import 'package:mileage_run/pages/register_page.dart';
 import 'package:mileage_run/pages/setting_page.dart';
 
 class TopPage extends StatelessWidget {
@@ -15,7 +15,7 @@ class TopPage extends StatelessWidget {
       tabItems: tabItems,
       screens: const [
         FlightPage(),
-        FavoritePage(),
+        RegisterPage(),
         SettingPage(),
       ],
     );

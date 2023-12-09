@@ -7,17 +7,17 @@ part of 'flight.dart';
 // **************************************************************************
 
 _$FlightImpl _$$FlightImplFromJson(Map<String, dynamic> json) => _$FlightImpl(
-      time: DateTime.parse(json['time'] as String),
-      departure: json['departure'] as String,
-      arrival: json['arrival'] as String,
-      airline: json['airline'] as String,
-      boardingType: json['boardingType'] as String,
+      time: json['time'] as String,
+      departure: json['departure'] as int,
+      arrival: json['arrival'] as int,
+      airline: json['airline'] as int,
+      boardingType: json['boardingType'] as int,
       registration: json['registration'] as String,
     );
 
 Map<String, dynamic> _$$FlightImplToJson(_$FlightImpl instance) =>
     <String, dynamic>{
-      'time': instance.time.toIso8601String(),
+      'time': instance.time,
       'departure': instance.departure,
       'arrival': instance.arrival,
       'airline': instance.airline,

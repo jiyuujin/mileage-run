@@ -7,11 +7,11 @@ part 'flight.g.dart';
 @freezed
 class Flight with _$Flight {
   const factory Flight({
-    required DateTime time,
-    required String departure,
-    required String arrival,
-    required String airline,
-    required String boardingType,
+    required String time,
+    required int departure,
+    required int arrival,
+    required int airline,
+    required int boardingType,
     required String registration,
   }) = _Flight;
 

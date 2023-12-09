@@ -20,11 +20,11 @@ Flight _$FlightFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Flight {
-  DateTime get time => throw _privateConstructorUsedError;
-  String get departure => throw _privateConstructorUsedError;
-  String get arrival => throw _privateConstructorUsedError;
-  String get airline => throw _privateConstructorUsedError;
-  String get boardingType => throw _privateConstructorUsedError;
+  String get time => throw _privateConstructorUsedError;
+  int get departure => throw _privateConstructorUsedError;
+  int get arrival => throw _privateConstructorUsedError;
+  int get airline => throw _privateConstructorUsedError;
+  int get boardingType => throw _privateConstructorUsedError;
   String get registration => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,11 +38,11 @@ abstract class $FlightCopyWith<$Res> {
       _$FlightCopyWithImpl<$Res, Flight>;
   @useResult
   $Res call(
-      {DateTime time,
-      String departure,
-      String arrival,
-      String airline,
-      String boardingType,
+      {String time,
+      int departure,
+      int arrival,
+      int airline,
+      int boardingType,
       String registration});
 }
 
@@ -70,23 +70,23 @@ class _$FlightCopyWithImpl<$Res, $Val extends Flight>
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       departure: null == departure
           ? _value.departure
           : departure // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       arrival: null == arrival
           ? _value.arrival
           : arrival // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       airline: null == airline
           ? _value.airline
           : airline // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       boardingType: null == boardingType
           ? _value.boardingType
           : boardingType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       registration: null == registration
           ? _value.registration
           : registration // ignore: cast_nullable_to_non_nullable
@@ -103,11 +103,11 @@ abstract class _$$FlightImplCopyWith<$Res> implements $FlightCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {DateTime time,
-      String departure,
-      String arrival,
-      String airline,
-      String boardingType,
+      {String time,
+      int departure,
+      int arrival,
+      int airline,
+      int boardingType,
       String registration});
 }
 
@@ -133,23 +133,23 @@ class __$$FlightImplCopyWithImpl<$Res>
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       departure: null == departure
           ? _value.departure
           : departure // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       arrival: null == arrival
           ? _value.arrival
           : arrival // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       airline: null == airline
           ? _value.airline
           : airline // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       boardingType: null == boardingType
           ? _value.boardingType
           : boardingType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       registration: null == registration
           ? _value.registration
           : registration // ignore: cast_nullable_to_non_nullable
@@ -173,15 +173,15 @@ class _$FlightImpl with DiagnosticableTreeMixin implements _Flight {
       _$$FlightImplFromJson(json);
 
   @override
-  final DateTime time;
+  final String time;
   @override
-  final String departure;
+  final int departure;
   @override
-  final String arrival;
+  final int arrival;
   @override
-  final String airline;
+  final int airline;
   @override
-  final String boardingType;
+  final int boardingType;
   @override
   final String registration;
 
@@ -240,25 +240,25 @@ class _$FlightImpl with DiagnosticableTreeMixin implements _Flight {
 
 abstract class _Flight implements Flight {
   const factory _Flight(
-      {required final DateTime time,
-      required final String departure,
-      required final String arrival,
-      required final String airline,
-      required final String boardingType,
+      {required final String time,
+      required final int departure,
+      required final int arrival,
+      required final int airline,
+      required final int boardingType,
       required final String registration}) = _$FlightImpl;
 
   factory _Flight.fromJson(Map<String, dynamic> json) = _$FlightImpl.fromJson;
 
   @override
-  DateTime get time;
+  String get time;
   @override
-  String get departure;
+  int get departure;
   @override
-  String get arrival;
+  int get arrival;
   @override
-  String get airline;
+  int get airline;
   @override
-  String get boardingType;
+  int get boardingType;
   @override
   String get registration;
   @override

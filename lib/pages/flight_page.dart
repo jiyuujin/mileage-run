@@ -33,7 +33,7 @@ class FlightPage extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
                 child: BoardingCard(
-                  boardedAt: DateFormat('yyyy-MM-ddTHH:mm:ss+09:00').parse(data['time'].toString()),
+                  boardedAt: DateFormat('yyyy-MM-ddTHH:mm:ss.000+09:00').parse(data['time'].toString()),
                   departure: getAirportName(int.parse(data['departure'].toString())),
                   arrival: getAirportName(int.parse(data['arrival'].toString())),
                   airline: getAirlineName(int.parse(data['airline'].toString())),
