@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'flight.freezed.dart';
-part 'flight.g.dart';
+part 'generated/flight.freezed.dart';
+part 'generated/flight.g.dart';
 
 @freezed
 class Flight with _$Flight {

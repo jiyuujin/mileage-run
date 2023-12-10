@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'aviation.dart';
+part of '../aviation.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

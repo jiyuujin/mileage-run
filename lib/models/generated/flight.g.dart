@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'flight.dart';
+part of '../flight.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

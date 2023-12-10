@@ -655,7 +655,7 @@ packages:
     source: sdk
     version: "0.0.99"
   source_gen:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: source_gen
       sha256: fc0da689e5302edb6177fdd964efcb7f58912f43c28c2047a808f5bfff643d16
