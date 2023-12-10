@@ -11,40 +11,49 @@ class FlightPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(color: Colors.lightBlue),
-      child: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance
-          .collection('flights')
-          .orderBy('time', descending: true)
-          .snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
+      child: const FlightList(),
+    );
+  }
+}
 
-          if (snapshot.hasError) {
-            return const Text('Something went wrong');
-          }
+class FlightList extends StatelessWidget {
+  const FlightList({super.key});
 
-          return ListView(
-            children: snapshot.data!.docs.map((DocumentSnapshot document) {
-              final data = document.data() as Map<String, dynamic>;
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-                child: BoardingCard(
-                  boardedAt: DateFormat('yyyy-MM-ddTHH:mm:ss.000+09:00').parse(data['time'].toString()),
-                  departure: getAirportName(int.parse(data['departure'].toString())),
-                  arrival: getAirportName(int.parse(data['arrival'].toString())),
-                  airline: getAirlineName(int.parse(data['airline'].toString())),
-                  boardingType: getBoardingTypeName(int.parse(data['boardingType'].toString())),
-                  registration: data['registration'],
-                ),
-              );
-            }).toList(),
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance
+        .collection('flights')
+        .orderBy('time', descending: true)
+        .snapshots(),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(
+            child: CircularProgressIndicator(),
           );
         }
-      ),
+
+        if (snapshot.hasError) {
+          return const Text('Something went wrong');
+        }
+
+        return ListView(
+          children: snapshot.data!.docs.map((DocumentSnapshot document) {
+            final data = document.data() as Map<String, dynamic>;
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+              child: BoardingCard(
+                boardedAt: DateFormat('yyyy-MM-ddTHH:mm:ss.000+09:00').parse(data['time'].toString()),
+                departure: getAirportName(int.parse(data['departure'].toString())),
+                arrival: getAirportName(int.parse(data['arrival'].toString())),
+                airline: getAirlineName(int.parse(data['airline'].toString())),
+                boardingType: getBoardingTypeName(int.parse(data['boardingType'].toString())),
+                registration: data['registration'],
+              ),
+            );
+          }).toList(),
+        );
+      }
     );
   }
 }
