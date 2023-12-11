@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 extension DateTimeStringExtension on DateTime {
   String toIso8601StringWithTimeZoneOffset() {
     if (isUtc) return toIso8601String();
@@ -11,4 +13,8 @@ extension DateTimeStringExtension on DateTime {
 
     return '${toIso8601String()}$offsetFormat';
   }
+}
+
+DateTime getFormatDateTime(String d) {
+  return DateFormat('yyyy-MM-ddTHH:mm:ss.000+09:00', 'ja_JP').parse(d);
 }

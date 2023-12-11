@@ -1,8 +1,8 @@
 import 'package:base_widgets/components/boarding_card.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:mileage_run/domains/aviation_service.dart';
+import 'package:mileage_run/utils/datetime.dart';
 
 class FlightPage extends StatelessWidget {
   const FlightPage({super.key});
@@ -43,7 +43,7 @@ class FlightList extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
               child: BoardingCard(
-                boardedAt: DateFormat('yyyy-MM-ddTHH:mm:ss.000+09:00').parse(data['time']),
+                boardedAt: getFormatDateTime(data['time']),
                 departure: getAirportName(int.parse(data['departure'].toString())),
                 arrival: getAirportName(int.parse(data['arrival'].toString())),
                 airline: getAirlineName(int.parse(data['airline'].toString())),
