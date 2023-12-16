@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of '../flight.dart';
+part of '../flight_form.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Flight _$FlightFromJson(Map<String, dynamic> json) {
-  return _Flight.fromJson(json);
+FlightForm _$FlightFormFromJson(Map<String, dynamic> json) {
+  return _FlightForm.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Flight {
+mixin _$FlightForm {
   String get time => throw _privateConstructorUsedError;
   int get departure => throw _privateConstructorUsedError;
   int get arrival => throw _privateConstructorUsedError;
@@ -29,13 +29,15 @@ mixin _$Flight {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FlightCopyWith<Flight> get copyWith => throw _privateConstructorUsedError;
+  $FlightFormCopyWith<FlightForm> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FlightCopyWith<$Res> {
-  factory $FlightCopyWith(Flight value, $Res Function(Flight) then) =
-      _$FlightCopyWithImpl<$Res, Flight>;
+abstract class $FlightFormCopyWith<$Res> {
+  factory $FlightFormCopyWith(
+          FlightForm value, $Res Function(FlightForm) then) =
+      _$FlightFormCopyWithImpl<$Res, FlightForm>;
   @useResult
   $Res call(
       {String time,
@@ -47,9 +49,9 @@ abstract class $FlightCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FlightCopyWithImpl<$Res, $Val extends Flight>
-    implements $FlightCopyWith<$Res> {
-  _$FlightCopyWithImpl(this._value, this._then);
+class _$FlightFormCopyWithImpl<$Res, $Val extends FlightForm>
+    implements $FlightFormCopyWith<$Res> {
+  _$FlightFormCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -96,10 +98,11 @@ class _$FlightCopyWithImpl<$Res, $Val extends Flight>
 }
 
 /// @nodoc
-abstract class _$$FlightImplCopyWith<$Res> implements $FlightCopyWith<$Res> {
-  factory _$$FlightImplCopyWith(
-          _$FlightImpl value, $Res Function(_$FlightImpl) then) =
-      __$$FlightImplCopyWithImpl<$Res>;
+abstract class _$$FlightFormImplCopyWith<$Res>
+    implements $FlightFormCopyWith<$Res> {
+  factory _$$FlightFormImplCopyWith(
+          _$FlightFormImpl value, $Res Function(_$FlightFormImpl) then) =
+      __$$FlightFormImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +115,11 @@ abstract class _$$FlightImplCopyWith<$Res> implements $FlightCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FlightImplCopyWithImpl<$Res>
-    extends _$FlightCopyWithImpl<$Res, _$FlightImpl>
-    implements _$$FlightImplCopyWith<$Res> {
-  __$$FlightImplCopyWithImpl(
-      _$FlightImpl _value, $Res Function(_$FlightImpl) _then)
+class __$$FlightFormImplCopyWithImpl<$Res>
+    extends _$FlightFormCopyWithImpl<$Res, _$FlightFormImpl>
+    implements _$$FlightFormImplCopyWith<$Res> {
+  __$$FlightFormImplCopyWithImpl(
+      _$FlightFormImpl _value, $Res Function(_$FlightFormImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -129,7 +132,7 @@ class __$$FlightImplCopyWithImpl<$Res>
     Object? boardingType = null,
     Object? registration = null,
   }) {
-    return _then(_$FlightImpl(
+    return _then(_$FlightFormImpl(
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -160,8 +163,8 @@ class __$$FlightImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FlightImpl with DiagnosticableTreeMixin implements _Flight {
-  const _$FlightImpl(
+class _$FlightFormImpl with DiagnosticableTreeMixin implements _FlightForm {
+  const _$FlightFormImpl(
       {required this.time,
       required this.departure,
       required this.arrival,
@@ -169,8 +172,8 @@ class _$FlightImpl with DiagnosticableTreeMixin implements _Flight {
       required this.boardingType,
       required this.registration});
 
-  factory _$FlightImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlightImplFromJson(json);
+  factory _$FlightFormImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlightFormImplFromJson(json);
 
   @override
   final String time;
@@ -187,14 +190,14 @@ class _$FlightImpl with DiagnosticableTreeMixin implements _Flight {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Flight(time: $time, departure: $departure, arrival: $arrival, airline: $airline, boardingType: $boardingType, registration: $registration)';
+    return 'FlightForm(time: $time, departure: $departure, arrival: $arrival, airline: $airline, boardingType: $boardingType, registration: $registration)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'Flight'))
+      ..add(DiagnosticsProperty('type', 'FlightForm'))
       ..add(DiagnosticsProperty('time', time))
       ..add(DiagnosticsProperty('departure', departure))
       ..add(DiagnosticsProperty('arrival', arrival))
@@ -207,7 +210,7 @@ class _$FlightImpl with DiagnosticableTreeMixin implements _Flight {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FlightImpl &&
+            other is _$FlightFormImpl &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.departure, departure) ||
                 other.departure == departure) &&
@@ -227,27 +230,28 @@ class _$FlightImpl with DiagnosticableTreeMixin implements _Flight {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FlightImplCopyWith<_$FlightImpl> get copyWith =>
-      __$$FlightImplCopyWithImpl<_$FlightImpl>(this, _$identity);
+  _$$FlightFormImplCopyWith<_$FlightFormImpl> get copyWith =>
+      __$$FlightFormImplCopyWithImpl<_$FlightFormImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FlightImplToJson(
+    return _$$FlightFormImplToJson(
       this,
     );
   }
 }
 
-abstract class _Flight implements Flight {
-  const factory _Flight(
+abstract class _FlightForm implements FlightForm {
+  const factory _FlightForm(
       {required final String time,
       required final int departure,
       required final int arrival,
       required final int airline,
       required final int boardingType,
-      required final String registration}) = _$FlightImpl;
+      required final String registration}) = _$FlightFormImpl;
 
-  factory _Flight.fromJson(Map<String, dynamic> json) = _$FlightImpl.fromJson;
+  factory _FlightForm.fromJson(Map<String, dynamic> json) =
+      _$FlightFormImpl.fromJson;
 
   @override
   String get time;
@@ -263,6 +267,6 @@ abstract class _Flight implements Flight {
   String get registration;
   @override
   @JsonKey(ignore: true)
-  _$$FlightImplCopyWith<_$FlightImpl> get copyWith =>
+  _$$FlightFormImplCopyWith<_$FlightFormImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,20 +1,20 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'generated/flight.freezed.dart';
-part 'generated/flight.g.dart';
+part 'generated/flight_form.freezed.dart';
+part 'generated/flight_form.g.dart';
 
 @freezed
-class Flight with _$Flight {
-  const factory Flight({
+class FlightForm with _$FlightForm {
+  const factory FlightForm({
     required String time,
     required int departure,
     required int arrival,
     required int airline,
     required int boardingType,
     required String registration,
-  }) = _Flight;
+  }) = _FlightForm;
 
-  factory Flight.fromJson(Map<String, dynamic> json)
-    => _$FlightFromJson(json);
+  factory FlightForm.fromJson(Map<String, dynamic> json)
+    => _$FlightFormFromJson(json);
 }

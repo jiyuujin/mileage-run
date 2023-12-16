@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../flight.dart';
+part of '../flight_form.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FlightImpl _$$FlightImplFromJson(Map<String, dynamic> json) => _$FlightImpl(
+_$FlightFormImpl _$$FlightFormImplFromJson(Map<String, dynamic> json) =>
+    _$FlightFormImpl(
       time: json['time'] as String,
       departure: json['departure'] as int,
       arrival: json['arrival'] as int,
@@ -15,7 +16,7 @@ _$FlightImpl _$$FlightImplFromJson(Map<String, dynamic> json) => _$FlightImpl(
       registration: json['registration'] as String,
     );
 
-Map<String, dynamic> _$$FlightImplToJson(_$FlightImpl instance) =>
+Map<String, dynamic> _$$FlightFormImplToJson(_$FlightFormImpl instance) =>
     <String, dynamic>{
       'time': instance.time,
       'departure': instance.departure,

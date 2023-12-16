@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:mileage_run/entities/aviation.dart';
-import 'package:mileage_run/models/flight.dart';
+import 'package:mileage_run/models/flight_form.dart';
 import 'package:mileage_run/providers/form_provider.dart';
 
 import 'package:mileage_run/utils/datetime.dart';
@@ -30,7 +30,7 @@ class RegisterPage extends ConsumerWidget {
             title: 'Add Flight',
             maxFinite: true,
             onPressed: () {
-              Flight newFlight = controller.getAll();
+              FlightForm newFlight = controller.getAll();
               print(newFlight);
               FirebaseFirestore.instance.collection('flights').add({
                 'time': newFlight.time,
