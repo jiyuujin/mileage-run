@@ -12,7 +12,7 @@ dependencies:
   base_widgets:
     git:
       url: https://github.com/nekohack/base-widgets.git
-      ref: ver.2023.3.1
+      ref: ver.2023.4.1
   cloud_firestore: ^4.13.2
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.15.0

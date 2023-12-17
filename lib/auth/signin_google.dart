@@ -28,6 +28,8 @@ class SigninGoogle extends StatelessWidget {
       body: Center(
         child: CustomButton(
           backgroundColor: Colors.blue,
+          textColor: Colors.white,
+          borderRadius: BorderRadius.circular(8),
           title: 'Google',
           onPressed: () async {
             signInWithGoogle();

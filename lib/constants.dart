@@ -5,6 +5,5 @@ const title = 'Mileage Run';
 
 final List<TabItem> tabItems = [
   TabItem(icon: Icons.home.codePoint, name: 'Home'),
-  TabItem(icon: Icons.add_location.codePoint, name: 'Add'),
-  TabItem(icon: Icons.settings.codePoint, name: 'Settings'),
+  TabItem(icon: Icons.auto_graph.codePoint, name: 'Graph'),
 ];

@@ -12,8 +12,39 @@ import 'package:mileage_run/providers/form_provider.dart';
 
 import 'package:mileage_run/utils/datetime.dart';
 
+class AddPopupPage extends StatelessWidget {
+  const AddPopupPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () async {
+        await showDialog(
+          context: context,
+          builder: (_) {
+            return SimpleDialog(
+              title: const Text('Register Flight'),
+              children: <Widget>[
+                RegisterPage(
+                  onRegistered: () {
+                    Navigator.pop(context, 'Close Dialog');
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      },
+      tooltip: 'Register Flight',
+      child: const Icon(Icons.add),
+    );
+  }
+}
+
 class RegisterPage extends ConsumerWidget {
-  const RegisterPage({super.key});
+  final Function onRegistered;
+
+  const RegisterPage({super.key, required this.onRegistered});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,6 +58,7 @@ class RegisterPage extends ConsumerWidget {
           const RegisterForm(),
           CustomButton(
             backgroundColor: Colors.blue,
+            textColor: Colors.white,
             title: 'Add Flight',
             maxFinite: true,
             onPressed: () {
@@ -40,6 +72,7 @@ class RegisterPage extends ConsumerWidget {
                 'boardingType': newFlight.boardingType,
                 'registration': newFlight.registration,
               });
+              onRegistered();
             },
           ),
         ],
@@ -59,6 +92,7 @@ class RegisterForm extends ConsumerWidget {
       children: [
         DatepickerField(
           backgroundColor: Colors.blue,
+          textColor: Colors.white,
           title: 'BoardedAt',
           maxFinite: true,
           onChanged: (DateTime? value) {
@@ -67,7 +101,7 @@ class RegisterForm extends ConsumerWidget {
         ),
         const Gap(12),
         DropdownField(
-          color: Colors.blue,
+          textColor: Colors.blue,
           underlineColor: Colors.deepPurpleAccent,
           dropdownList: airports.map((a) => a.text).toList(),
           isExpanded: true,
@@ -79,7 +113,7 @@ class RegisterForm extends ConsumerWidget {
         ),
         const Gap(12),
         DropdownField(
-          color: Colors.blue,
+          textColor: Colors.blue,
           underlineColor: Colors.deepPurpleAccent,
           dropdownList: airports.map((a) => a.text).toList(),
           isExpanded: true,
@@ -91,7 +125,7 @@ class RegisterForm extends ConsumerWidget {
         ),
         const Gap(12),
         DropdownField(
-          color: Colors.blue,
+          textColor: Colors.blue,
           underlineColor: Colors.deepPurpleAccent,
           dropdownList: airlines.map((a) => a.text).toList(),
           isExpanded: true,
@@ -103,7 +137,7 @@ class RegisterForm extends ConsumerWidget {
         ),
         const Gap(12),
         DropdownField(
-          color: Colors.blue,
+          textColor: Colors.blue,
           underlineColor: Colors.deepPurpleAccent,
           dropdownList: boardingTypes.map((a) => a.text).toList(),
           isExpanded: true,

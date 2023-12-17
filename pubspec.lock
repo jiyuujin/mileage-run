@@ -53,8 +53,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "ver.2023.3.1"
-      resolved-ref: "1fe6ae1bafd250f678b6f551b84f745d4e3e5cd3"
+      ref: "ver.2023.4.1"
+      resolved-ref: "6a7e7dcfb1eb129b3e248e64f912a1f80c020a59"
       url: "https://github.com/nekohack/base-widgets.git"
     source: git
     version: "1.0.0+1"
@@ -778,10 +778,10 @@ packages:
     dependency: transitive
     description:
       name: widgetbook
-      sha256: "81323d0d5db35f2931f15fec416f236040c0b86b2ce78dd3a8907f153f29e526"
+      sha256: bdbfdc517923218394f11ad4e004a7e3d45672047e9d87f52833ac294366232d
       url: "https://pub.dev"
     source: hosted
-    version: "3.6.0"
+    version: "3.7.0"
   widgetbook_annotation:
     dependency: transitive
     description:
