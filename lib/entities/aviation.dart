@@ -40,6 +40,7 @@ final List<Aviation> airlines = [
   const Aviation(value: 14, text: 'EVA'),
   const Aviation(value: 15, text: 'VAX'),
   const Aviation(value: 16, text: 'IT'),
+  const Aviation(value: 17, text: 'FW'),
 ];
 
 final List<Aviation> boardingTypes = [
@@ -57,4 +58,6 @@ final List<Aviation> boardingTypes = [
   const Aviation(value: 11, text: 'Airbus A321'),
   const Aviation(value: 12, text: 'Airbus A320'),
   const Aviation(value: 13, text: 'Boeing747-4'),
+  const Aviation(value: 14, text: 'Bombardier DHC8-Q400'),
+  const Aviation(value: 15, text: 'Canadian Bombardier CRJ-700'),
 ];
