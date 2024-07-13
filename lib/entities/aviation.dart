@@ -57,10 +57,12 @@ final List<Aviation> boardingTypes = [
   const Aviation(value: 7, text: 'Boeing737-5'),
   const Aviation(value: 8, text: 'Embraer190'),
   const Aviation(value: 9, text: 'ATR42-6'),
-  const Aviation(value: 10, text: 'Airbus A350'),
+  const Aviation(value: 10, text: 'Airbus A350-9'),
   const Aviation(value: 11, text: 'Airbus A321'),
   const Aviation(value: 12, text: 'Airbus A320'),
   const Aviation(value: 13, text: 'Boeing747-4'),
   const Aviation(value: 14, text: 'Bombardier DHC8-Q400'),
   const Aviation(value: 15, text: 'Canadian Bombardier CRJ-700'),
+  const Aviation(value: 16, text: 'Boeing787-10 (B78X)'),
+  const Aviation(value: 17, text: 'Airbus A350-10'),
 ];
