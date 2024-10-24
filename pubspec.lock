@@ -53,8 +53,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "ver.2024.9.2"
-      resolved-ref: "1fd9f5cff953608024a352a46c76ca1d78f0fbc0"
+      ref: "enhance/boarding-card"
+      resolved-ref: "510140f0c7496b7aff2f6a0ad9f7593cfc95b676"
       url: "https://github.com/nekohack/base-widgets.git"
     source: git
     version: "1.0.0+1"
