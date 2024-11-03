@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:mileage_run/pages/top_page.dart';
 
 Future<UserCredential?> signInGoogle(BuildContext context) async {
   try {
@@ -17,12 +16,6 @@ Future<UserCredential?> signInGoogle(BuildContext context) async {
     );
 
     final userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
-
-    if (context.mounted) {
-      Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => const TopPage()),
-        (route) => false);
-    }
 
     return userCredential;
   } catch (e) {
