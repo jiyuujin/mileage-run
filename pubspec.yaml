@@ -12,7 +12,7 @@ dependencies:
   base_widgets:
     git:
       url: https://github.com/nekohack/base-widgets.git
-      ref: enhance/boarding-card
+      ref: enhance/boarding-card-cp
   cloud_firestore: ^4.13.2
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.15.0
