@@ -23,6 +23,7 @@ final List<Aviation> airports = [
   const Aviation(value: 19, text: '函館 / HKD', position: Position(latitude: 41.7759281, longitude: 140.8156117)),
   const Aviation(value: 20, text: '広島 / HIJ', position: Position(latitude: 34.4405168, longitude: 132.9186703)),
   const Aviation(value: 21, text: '仙台 / SDJ', position: Position(latitude: 38.1378327, longitude: 140.9284311)),
+  const Aviation(value: 22, text: '長崎 / NGS', position: Position(latitude: 32.9149339, longitude: 129.917042)),
 ];
 
 final List<Aviation> airlines = [
