@@ -36,7 +36,7 @@ class MyApp extends ConsumerWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: userEmail != null ? const TopPage() : const SignInApp(),
+      home: const TopPage(),
     );
   }
 }
