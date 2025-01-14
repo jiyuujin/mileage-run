@@ -32,10 +32,10 @@
               "client_type": 3
             },
             {
-              "client_id": "640788022391-d5g8q1ddol3ke11fqrdn5ve0bh1na69h.apps.googleusercontent.com",
+              "client_id": "640788022391-chk4h4100vb6buq80ifmr6u5h99ptg6r.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.authWeb"
+                "bundle_id": "com.example.mileageRun"
               }
             }
           ]
@@ -50,6 +50,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "640788022391-io1p28ekhi103flm1utdt3f3ih1sfbl2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mileage_run",
+            "certificate_hash": "c9e8144c84800435ae010f942a24ab026544b101"
+          }
+        },
         {
           "client_id": "640788022391-8u6uouh8ms50n3t0t6gj6rn6otkdt9me.apps.googleusercontent.com",
           "client_type": 3
@@ -68,10 +76,10 @@
               "client_type": 3
             },
             {
-              "client_id": "640788022391-d5g8q1ddol3ke11fqrdn5ve0bh1na69h.apps.googleusercontent.com",
+              "client_id": "640788022391-chk4h4100vb6buq80ifmr6u5h99ptg6r.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.authWeb"
+                "bundle_id": "com.example.mileageRun"
               }
             }
           ]
@@ -104,10 +112,10 @@
               "client_type": 3
             },
             {
-              "client_id": "640788022391-d5g8q1ddol3ke11fqrdn5ve0bh1na69h.apps.googleusercontent.com",
+              "client_id": "640788022391-chk4h4100vb6buq80ifmr6u5h99ptg6r.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.authWeb"
+                "bundle_id": "com.example.mileageRun"
               }
             }
           ]
