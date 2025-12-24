@@ -9,10 +9,10 @@ part of '../flight_form.dart';
 _$FlightFormImpl _$$FlightFormImplFromJson(Map<String, dynamic> json) =>
     _$FlightFormImpl(
       time: json['time'] as String,
-      departure: json['departure'] as int,
-      arrival: json['arrival'] as int,
-      airline: json['airline'] as int,
-      boardingType: json['boardingType'] as int,
+      departure: (json['departure'] as num).toInt(),
+      arrival: (json['arrival'] as num).toInt(),
+      airline: (json['airline'] as num).toInt(),
+      boardingType: (json['boardingType'] as num).toInt(),
       registration: json['registration'] as String,
     );
 

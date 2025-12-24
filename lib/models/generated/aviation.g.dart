@@ -8,7 +8,7 @@ part of '../aviation.dart';
 
 _$AviationImpl _$$AviationImplFromJson(Map<String, dynamic> json) =>
     _$AviationImpl(
-      value: json['value'] as int,
+      value: (json['value'] as num).toInt(),
       text: json['text'] as String,
       position: json['position'] == null
           ? null

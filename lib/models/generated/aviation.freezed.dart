@@ -12,7 +12,7 @@ part of '../aviation.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Aviation _$AviationFromJson(Map<String, dynamic> json) {
   return _Aviation.fromJson(json);
@@ -24,8 +24,12 @@ mixin _$Aviation {
   String get text => throw _privateConstructorUsedError;
   Position? get position => throw _privateConstructorUsedError;
 
+  /// Serializes this Aviation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Aviation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AviationCopyWith<Aviation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$AviationCopyWithImpl<$Res, $Val extends Aviation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Aviation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -73,6 +79,8 @@ class _$AviationCopyWithImpl<$Res, $Val extends Aviation>
     ) as $Val);
   }
 
+  /// Create a copy of Aviation
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PositionCopyWith<$Res>? get position {
@@ -108,6 +116,8 @@ class __$$AviationImplCopyWithImpl<$Res>
       _$AviationImpl _value, $Res Function(_$AviationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Aviation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -164,7 +174,7 @@ class _$AviationImpl with DiagnosticableTreeMixin implements _Aviation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AviationImpl &&
@@ -174,11 +184,13 @@ class _$AviationImpl with DiagnosticableTreeMixin implements _Aviation {
                 other.position == position));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, value, text, position);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Aviation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AviationImplCopyWith<_$AviationImpl> get copyWith =>
@@ -207,8 +219,11 @@ abstract class _Aviation implements Aviation {
   String get text;
   @override
   Position? get position;
+
+  /// Create a copy of Aviation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AviationImplCopyWith<_$AviationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -222,8 +237,12 @@ mixin _$Position {
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
 
+  /// Serializes this Position to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Position
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PositionCopyWith<Position> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -246,6 +265,8 @@ class _$PositionCopyWithImpl<$Res, $Val extends Position>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Position
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -284,6 +305,8 @@ class __$$PositionImplCopyWithImpl<$Res>
       _$PositionImpl _value, $Res Function(_$PositionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Position
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -333,7 +356,7 @@ class _$PositionImpl with DiagnosticableTreeMixin implements _Position {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PositionImpl &&
@@ -343,11 +366,13 @@ class _$PositionImpl with DiagnosticableTreeMixin implements _Position {
                 other.longitude == longitude));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Position
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PositionImplCopyWith<_$PositionImpl> get copyWith =>
@@ -372,8 +397,11 @@ abstract class _Position implements Position {
   double get latitude;
   @override
   double get longitude;
+
+  /// Create a copy of Position
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PositionImplCopyWith<_$PositionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
