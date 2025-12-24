@@ -16,7 +16,7 @@ class TopPage extends HookWidget {
     return BottomNavigationTab(
       title: title,
       tabItems: tabItems,
-      screens: const [
+      screens: [
         Scaffold(
           body: FlightPage(),
           floatingActionButton: AddPopupPage(),

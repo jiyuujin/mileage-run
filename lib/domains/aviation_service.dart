@@ -11,6 +11,16 @@ String getAirportName(int id) {
   return text;
 }
 
+Position getAirportPosition(int id) {
+  var position;
+  for (Aviation airport in airports) {
+    if (airport.value == id) {
+      position = airport.position;
+    }
+  }
+  return position;
+}
+
 String getAirlineName(int id) {
   var text = '';
   for (Aviation airline in airlines) {
