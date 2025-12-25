@@ -1,4 +1,4 @@
-import 'package:base_widgets/components/custom_button.dart';
+// import 'package:base_widgets/components/custom_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -113,14 +113,25 @@ class SignInApp extends ConsumerWidget {
                     SizedBox(
                       width: double.infinity,
                       height: 48,
-                      child: CustomButton(
-                        title: 'Googleログイン',
-                        backgroundColor: Colors.blue,
-                        textColor: Colors.white,
-                        borderRadius: BorderRadius.circular(8),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 16,
+                            horizontal: 24,
+                          ),
+                        ),
                         onPressed: () async {
                           await signInGoogle(context);
                         },
+                        child: const Text(
+                          'Googleログイン',
+                          style: TextStyle(fontSize: 16),
+                        ),
                       ),
                     ),
                     const SizedBox(height: 16),

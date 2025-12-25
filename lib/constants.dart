@@ -1,12 +1,27 @@
-import 'package:base_widgets/models/tab_item.dart';
+// import 'package:base_widgets/models/tab_item.dart';
 import 'package:flutter/material.dart';
 
 const title = 'Mileage Run';
 
-final List<TabItem> tabItems = [
-  TabItem(icon: Icons.home.codePoint, name: 'Home'),
-  TabItem(icon: Icons.photo_camera.codePoint, name: 'Photo'),
-  TabItem(icon: Icons.auto_graph.codePoint, name: 'Graph'),
+// final List<TabItem> tabItems = [
+//   TabItem(icon: Icons.flight.codePoint, name: 'Home'),
+//   TabItem(icon: Icons.photo_camera.codePoint, name: 'Photo'),
+//   TabItem(icon: Icons.analytics.codePoint, name: 'Graph'),
+// ];
+
+final List<BottomNavigationBarItem> tabItems = [
+  BottomNavigationBarItem(
+    icon: Icon(Icons.flight),
+    label: 'Flight',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.photo),
+    label: 'Photo',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.analytics),
+    label: 'Analysis',
+  ),
 ];
 
 final List<Map<String, String>> photoLinks = [

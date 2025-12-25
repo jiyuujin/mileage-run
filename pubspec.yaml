@@ -9,10 +9,10 @@ environment:
   sdk: '>=3.6.0-216.1.beta <4.0.0'
 
 dependencies:
-  base_widgets:
-    git:
-      url: https://github.com/nekohack/base-widgets.git
-      ref: enhance/boarding-card-cp
+  # base_widgets:
+  #   git:
+  #     url: https://github.com/nekohack/base-widgets.git
+  #     ref: enhance/boarding-card-cp
   cloud_firestore: ^6.1.1
   cupertino_icons: ^1.0.2
   firebase_auth: ^6.1.3
@@ -31,10 +31,11 @@ dependencies:
   image: ^4.5.2
   image_picker: ^1.1.2
   intl: ^0.20.2
-  latlong2: ^0.9.1
-  permission_handler: ^12.0.1
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1
+  latlong2: ^0.9.1
+  permission_handler: ^12.0.1
+  url_launcher: ^6.1.11
   uuid: ^4.0.0
 
 dev_dependencies:

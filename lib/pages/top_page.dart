@@ -1,4 +1,4 @@
-import 'package:base_widgets/components/bottom_navigation_tab.dart';
+// import 'package:base_widgets/components/bottom_navigation_tab.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -9,10 +9,27 @@ import 'package:mileage_run/pages/photo_page.dart';
 import 'package:mileage_run/pages/register_page.dart';
 import 'package:mileage_run/pages/upload_page.dart';
 
-class TopPage extends HookWidget {
-  TopPage({super.key});
+class TopPage extends StatefulWidget {
+  const TopPage({super.key});
 
+  @override
+  State<TopPage> createState() => _TopPageState();
+}
+
+class _TopPageState extends State<TopPage> {
   final user = FirebaseAuth.instance.currentUser;
+
+  int _selectedIndex = 0;
+
+  final List<Widget> _screens = [
+    const FlightPage(),
+    const PhotoPage(),
+    AnalysisPage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() => _selectedIndex = index);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,22 +45,17 @@ class TopPage extends HookWidget {
           ),
         ],
       ),
-      body: BottomNavigationTab(
-        title: title,
-        tabItems: tabItems,
-        screens: [
-          const Scaffold(
-            body: FlightPage(),
-            floatingActionButton: AddPopupPage(),
-          ),
-          const Scaffold(
-            body: PhotoPage(),
-            floatingActionButton: AddModalPage(),
-          ),
-          Scaffold(
-            body: AnalysisPage(),
-          ),
-        ],
+      body: _screens[_selectedIndex],
+      floatingActionButton: _selectedIndex == 0
+          ? const AddPopupPage()
+          : _selectedIndex == 1
+              ? const AddModalPage()
+              : null,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        items: tabItems,
+        onTap: _onItemTapped,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
