@@ -22,6 +22,10 @@ final List<BottomNavigationBarItem> tabItems = [
     icon: Icon(Icons.analytics),
     label: 'Analysis',
   ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.leaderboard),
+    label: 'Ranking',
+  ),
 ];
 
 final List<Map<String, String>> photoLinks = [
