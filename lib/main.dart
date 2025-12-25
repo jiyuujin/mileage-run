@@ -28,7 +28,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    String? userEmail = ref.watch(userEmailProvider);
+    final authState = ref.watch(authStateProvider);
 
     return MaterialApp(
       title: title,
@@ -36,7 +36,22 @@ class MyApp extends ConsumerWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: userEmail != null ? const TopPage() : const SignInApp(),
+      // home: const TopPage(),
+      home: authState.when(
+        data: (user) {
+          if (user != null) {
+            return TopPage();
+          } else {
+            return const SignInApp();
+          }
+        },
+        loading: () => const Scaffold(
+          body: Center(child: CircularProgressIndicator()),
+        ),
+        error: (e, _) => Scaffold(
+          body: Center(child: Text(e.toString())),
+        ),
+      ),
     );
   }
 }
@@ -46,23 +61,83 @@ class SignInApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-       body: Center(
-        child: SizedBox(
-          width: 200,
-          height: 30,
-          child: CustomButton(
-            backgroundColor: Colors.blue,
-            textColor: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-            title: 'Google',
-            onPressed: () async {
-              await signInGoogle(context)
-                .then((value) => ref.watch(userEmailProvider.notifier).state = value!.user!.email);
-            },
+    return Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFFE3F2FD),
+              Colors.white,
+            ],
           ),
         ),
-      ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Card(
+              elevation: 6,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.account_circle,
+                      size: 80,
+                      color: Colors.blue,
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'Mileage Run',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      '今年、乗った「ヒコーキ」を確認しよう！',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(height: 32),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 48,
+                      child: CustomButton(
+                        title: 'Googleログイン',
+                        backgroundColor: Colors.blue,
+                        textColor: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                        onPressed: () async {
+                          await signInGoogle(context);
+                        },
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'ログインすることで利用規約と\nプライバシーポリシーに同意したものとします',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
     );
   }
 }

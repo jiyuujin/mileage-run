@@ -99,10 +99,6 @@ void startYearAnimation() async {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: buildYearSlider(),
-          ),
           Expanded(
             child: ValueListenableBuilder<int>(
               valueListenable: selectedYear,
@@ -149,6 +145,10 @@ void startYearAnimation() async {
                 );
               },
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: buildYearSlider(),
           ),
         ],
       ),

@@ -22,39 +22,42 @@ class FlightList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance
-        .collection('flights')
-        .orderBy('time', descending: true)
-        .snapshots(),
-      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        if (!snapshot.hasData) {
-          return const Center(
-            child: CircularProgressIndicator(),
+    return Scaffold(
+      appBar: AppBar(title: const Text('Flights List')),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+          .collection('flights')
+          .orderBy('time', descending: true)
+          .snapshots(),
+        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          if (snapshot.hasError) {
+            return const Text('Something went wrong');
+          }
+
+          return ListView(
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              final data = document.data() as Map<String, dynamic>;
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+                child: BoardingCard(
+                  boardedAt: data['time'],
+                  departure: getAirportName(int.parse(data['departure'].toString())),
+                  arrival: getAirportName(int.parse(data['arrival'].toString())),
+                  airline: getAirlineName(int.parse(data['airline'].toString())),
+                  boardingType: getBoardingTypeName(int.parse(data['boardingType'].toString())),
+                  registration: data['registration'],
+                ),
+              );
+            }).toList(),
           );
         }
-
-        if (snapshot.hasError) {
-          return const Text('Something went wrong');
-        }
-
-        return ListView(
-          children: snapshot.data!.docs.map((DocumentSnapshot document) {
-            final data = document.data() as Map<String, dynamic>;
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-              child: BoardingCard(
-                boardedAt: data['time'],
-                departure: getAirportName(int.parse(data['departure'].toString())),
-                arrival: getAirportName(int.parse(data['arrival'].toString())),
-                airline: getAirlineName(int.parse(data['airline'].toString())),
-                boardingType: getBoardingTypeName(int.parse(data['boardingType'].toString())),
-                registration: data['registration'],
-              ),
-            );
-          }).toList(),
-        );
-      }
+      ),
     );
   }
 }
