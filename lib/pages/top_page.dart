@@ -6,6 +6,7 @@ import 'package:mileage_run/constants.dart';
 import 'package:mileage_run/pages/analysis_page.dart';
 import 'package:mileage_run/pages/flight_page.dart';
 import 'package:mileage_run/pages/photo_page.dart';
+import 'package:mileage_run/pages/ranking_page.dart';
 import 'package:mileage_run/pages/register_page.dart';
 import 'package:mileage_run/pages/upload_page.dart';
 
@@ -25,6 +26,7 @@ class _TopPageState extends State<TopPage> {
     const FlightPage(),
     const PhotoPage(),
     AnalysisPage(),
+    const RankingPage(),
   ];
 
   void _onItemTapped(int index) {
