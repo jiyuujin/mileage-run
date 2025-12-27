@@ -2,20 +2,22 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mileage_run/models/flight_form.dart';
 
 final createFlightFormNotifierProvider =
-  StateNotifierProvider((ref) => CreateFlightFormNotifier());
+    NotifierProvider<CreateFlightFormNotifier, FlightForm>(
+  CreateFlightFormNotifier.new,
+);
 
-class CreateFlightFormNotifier extends StateNotifier<FlightForm> {
-    CreateFlightFormNotifier()
-      : super(
-        FlightForm(
-          time: DateTime.now().toIso8601String(),
-          departure: 0,
-          arrival: 0,
-          airline: 0,
-          boardingType: 0,
-          registration: '',
-        ),
-      );
+class CreateFlightFormNotifier extends Notifier<FlightForm> {
+  @override
+  FlightForm build() {
+    return FlightForm(
+      time: DateTime.now().toIso8601String(),
+      departure: 0,
+      arrival: 0,
+      airline: 0,
+      boardingType: 0,
+      registration: '',
+    );
+  }
 
   FlightForm getAll() {
     return state;

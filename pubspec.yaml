@@ -6,7 +6,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.6.0-216.1.beta <4.0.0'
+  sdk: '>=3.11.0-200.1.beta <4.0.0' # Flutter 3.40.0-0.2.pre
 
 dependencies:
   # base_widgets:
@@ -27,7 +27,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   gap: ^3.0.1
   # google_maps_flutter: ^2.10.1
-  google_sign_in: ^6.1.6
+  google_sign_in: ^6.3.0
   image: ^4.5.2
   image_picker: ^1.1.2
   intl: ^0.20.2
