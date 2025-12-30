@@ -36,21 +36,37 @@ class _RankingPageState extends State<RankingPage> {
   }
 
   Map<int, int> _countAirports(List<QueryDocumentSnapshot> docs) {
-    final Map<int, int> countMap = {};
+    final Map<String, Set<int>> airportsByDate = {};
 
-    void add(dynamic value) {
-      if (value == null) return;
-      final int? intValue =
-          value is int ? value : int.tryParse(value.toString());
-      if (intValue != null) {
-        countMap[intValue] = (countMap[intValue] ?? 0) + 1;
+    for (var doc in docs) {
+      final timeString = doc['time'];
+      if (timeString == null) continue;
+
+      final date = DateTime.tryParse(timeString);
+      if (date == null) continue;
+
+      final dateKey = '${date.year}-${date.month}-${date.day}';
+      airportsByDate.putIfAbsent(dateKey, () => {});
+
+      void addAirport(dynamic value) {
+        if (value == null) return;
+        final int? intValue = value is int ? value : int.tryParse(value.toString());
+        if (intValue != null) {
+          airportsByDate[dateKey]!.add(intValue);
+        }
+      }
+
+      addAirport(doc['departure']);
+      addAirport(doc['arrival']);
+    }
+
+    final Map<int, int> countMap = {};
+    for (var airports in airportsByDate.values) {
+      for (var airportId in airports) {
+        countMap[airportId] = (countMap[airportId] ?? 0) + 1;
       }
     }
 
-    for (var doc in docs) {
-      add(doc['departure']);
-      add(doc['arrival']);
-    }
     return countMap;
   }
 
