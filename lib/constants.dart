@@ -30,6 +30,10 @@ final List<BottomNavigationBarItem> tabItems = [
 
 final List<Map<String, String>> photoLinks = [
   {
+    'url': 'https://photos.app.goo.gl/p7aHvNKmCEfQYdry9',
+    'title': 'Frequent Flyer 2026',
+  },
+  {
     'url': 'https://photos.app.goo.gl/XxbgDmBbjxk1HqqU9',
     'title': 'Frequent Flyer 2025',
   },

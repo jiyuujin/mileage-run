@@ -8,7 +8,7 @@ import 'package:mileage_run/models/flight_log.dart';
 class AnalysisPage extends StatelessWidget {
   AnalysisPage({super.key});
 
-  final ValueNotifier<int> selectedYear = ValueNotifier(2025);
+  final ValueNotifier<int> selectedYear = ValueNotifier(2026);
 
   Stream<List<FlightLog>> flightStream() {
     return FirebaseFirestore.instance
@@ -51,7 +51,7 @@ class AnalysisPage extends StatelessWidget {
 
 void startYearAnimation() async {
   selectedYear.value = 2012;
-  for (int year = selectedYear.value; year <= 2025; year++) {
+  for (int year = selectedYear.value; year <= 2026; year++) {
     selectedYear.value = year;
     await Future.delayed(const Duration(milliseconds: 750));
   }
@@ -73,8 +73,8 @@ void startYearAnimation() async {
                 children: [
                   Expanded(child: Slider(
                     min: 2012,
-                    max: 2025,
-                    divisions: 2025 - 2012 + 1,
+                    max: 2026,
+                    divisions: 2026 - 2012 + 1,
                     value: selectedYear.value.toDouble(),
                     label: selectedYear.value.toString(),
                     onChanged: (value) {

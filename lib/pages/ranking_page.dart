@@ -7,6 +7,7 @@ enum YearFilter {
   y2023,
   y2024,
   y2025,
+  y2026,
 }
 
 class RankingPage extends StatefulWidget {
@@ -78,6 +79,8 @@ class _RankingPageState extends State<RankingPage> {
         return 2024;
       case YearFilter.y2025:
         return 2025;
+      case YearFilter.y2026:
+        return 2026;
       case YearFilter.all:
         return null;
     }
@@ -108,6 +111,7 @@ class _RankingPageState extends State<RankingPage> {
           ButtonSegment(value: YearFilter.y2023, label: Text('2023')),
           ButtonSegment(value: YearFilter.y2024, label: Text('2024')),
           ButtonSegment(value: YearFilter.y2025, label: Text('2025')),
+          ButtonSegment(value: YearFilter.y2026, label: Text('2026')),
         ],
         selected: {_selectedYear},
         onSelectionChanged: (value) {
