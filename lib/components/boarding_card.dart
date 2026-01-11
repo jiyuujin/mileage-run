@@ -21,6 +21,9 @@ class BoardingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 600;
+
     return ClipPath(
       clipper: TicketClipper(),
       child: Container(
@@ -45,10 +48,10 @@ class BoardingCard extends StatelessWidget {
           children: [
             Text(
               boardedAt,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white70,
                 fontWeight: FontWeight.bold,
-                fontSize: 14,
+                fontSize: isMobile ? 10 : 14,
               ),
             ),
             const SizedBox(height: 12),
@@ -58,15 +61,10 @@ class BoardingCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _AirportCodeRich(code: departure),
-                    _AirportCodeRich(code: arrival),
+                    _AirportCodeRich(code: departure, isMobile: isMobile),
+                    _AirportCodeRich(code: arrival, isMobile: isMobile),
                   ],
                 ),
-                // const Icon(
-                //   Icons.flight_takeoff,
-                //   color: Colors.white70,
-                //   size: 28,
-                // ),
                 const DotsToFlightAnimation(),
               ],
             ),
@@ -76,9 +74,9 @@ class BoardingCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _InfoColumnRich(title: 'Boarding Type', value: boardingType),
-                _InfoColumnRich(title: 'Airline', value: airline),
-                _InfoColumnRich(title: 'Reg', value: registration),
+                _InfoColumnRich(title: 'Boarding Type', value: boardingType, isMobile: isMobile),
+                _InfoColumnRich(title: 'Airline', value: airline, isMobile: isMobile),
+                _InfoColumnRich(title: 'Reg', value: registration, isMobile: isMobile),
               ],
             ),
           ],
@@ -90,18 +88,19 @@ class BoardingCard extends StatelessWidget {
 
 class _AirportCodeRich extends StatelessWidget {
   final String code;
+  final bool isMobile;
 
-  const _AirportCodeRich({required this.code});
+  const _AirportCodeRich({required this.code, this.isMobile = false});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       code,
-      style: const TextStyle(
+      style: TextStyle(
         color: Colors.white,
-        fontSize: 28,
+        fontSize: isMobile ? 16 : 28,
         fontWeight: FontWeight.bold,
-        letterSpacing: 2,
+        letterSpacing: isMobile ? 0.5 : 2,
       ),
     );
   }
@@ -110,32 +109,41 @@ class _AirportCodeRich extends StatelessWidget {
 class _InfoColumnRich extends StatelessWidget {
   final String title;
   final String value;
+  final bool isMobile;
 
-  const _InfoColumnRich({required this.title, required this.value});
+  const _InfoColumnRich({
+    required this.title,
+    required this.value,
+    this.isMobile = false,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title.toUpperCase(),
-          style: const TextStyle(
-            color: Colors.white70,
-            fontSize: 10,
-            letterSpacing: 1,
+    return Flexible(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title.toUpperCase(),
+            style: TextStyle(
+              color: Colors.white70,
+              fontSize: isMobile ? 7 : 10,
+              letterSpacing: 0.5,
+            ),
+            overflow: TextOverflow.ellipsis,
           ),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          value,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
+          const SizedBox(height: 4),
+          Text(
+            value,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: isMobile ? 11 : 16,
+              fontWeight: FontWeight.bold,
+            ),
+            overflow: TextOverflow.ellipsis,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
